@@ -42,14 +42,147 @@ public class FinalTry2 {
 				Y.append(0);
 			}
 
-			L.append(temp_number_L); // Yaha se modified L milega .
-			X.append(temp_number_X); // Yaha se modified X milega .
+			L.append(temp_number_L);
+			X.append(temp_number_X);
 			Y.append(temp_number_Y);
 
 			System.out.println(X);
 			System.out.println(Y);
 			System.out.println(L);
 			System.out.println(R);
+
+			boolean option_flag = false;
+			int option_index = -1;
+
+			StringBuilder Z = new StringBuilder();
+
+			for (int index = 0; index < R.length(); index++) {
+
+				if (L.charAt(index) == '0' && R.charAt(index) == '0') {
+					if (option_flag == false) {
+						Z.append(0);
+						option_flag = false;
+						// option_index = ;
+					} else {
+						if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
+							Z.append(1);
+							option_flag = false;
+							// option_index = ;
+						}
+					}
+
+				} else if (L.charAt(index) == '1' && R.charAt(index) == '0') {
+					if (option_flag == false) {
+						Z.append(0);
+						option_flag = false;
+						// option_index = ;
+					} else {
+						if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
+							Z.append(1);
+							option_flag = false;
+							// option_index = ;
+						}
+					}
+
+				} else if (L.charAt(index) == '0' && R.charAt(index) == '1') {
+					if (option_flag == false) {
+						if (X.charAt(index) == '0' && Y.charAt(index) == '0') {
+							Z.append(0);
+							option_flag = true;
+							// option_index = ;
+						}
+						if (X.charAt(index) == '0' && Y.charAt(index) == '1') {
+							Z.append(1);
+							option_flag = true;
+							// option_index = ;
+						}
+						if (X.charAt(index) == '1' && Y.charAt(index) == '0') {
+							Z.append(1);
+							option_flag = true;
+							// option_index = ;
+
+						}
+						if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
+							Z.append(1);
+							option_flag = false;
+							// option_index = ;
+
+						}
+
+					} else {
+						if (X.charAt(index) == '0' && Y.charAt(index) == '0') {
+							Z.append(0);
+							option_flag = true;
+							// option_index = ;
+
+						}
+						if (X.charAt(index) == '0' && Y.charAt(index) == '1') {
+							Z.append(1);
+							option_flag = true;
+							// option_index = ;
+						}
+						if (X.charAt(index) == '1' && Y.charAt(index) == '0') {
+							Z.append(1);
+							option_flag = true;
+							// option_index = ;
+						}
+						if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
+							Z.append(1);
+							option_flag = false;
+							// option_index = ;
+						}
+
+					}
+
+				} else if (L.charAt(index) == '1' && R.charAt(index) == '1') {
+					if (option_flag == false) {
+						if (X.charAt(index) == '0' && Y.charAt(index) == '0') {
+							Z.append(0);
+							option_flag = true;
+							// option_index = ;
+						}
+						if (X.charAt(index) == '0' && Y.charAt(index) == '1') {
+							Z.append(1);
+							option_flag = true;
+							// option_index = ;
+						}
+						if (X.charAt(index) == '1' && Y.charAt(index) == '0') {
+							Z.append(1);
+							option_flag = true;
+							// option_index = ;
+						}
+						if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
+							Z.append(1);
+							option_flag = false;
+							// option_index = ;
+						}
+
+					} else {
+						if (X.charAt(index) == '0' && Y.charAt(index) == '0') {
+							Z.append(0);
+							option_flag = true;
+							// option_index = ;
+						}
+						if (X.charAt(index) == '0' && Y.charAt(index) == '1') {
+							Z.append(1);
+							option_flag = true;
+							// option_index = ;
+						}
+						if (X.charAt(index) == '1' && Y.charAt(index) == '0') {
+							Z.append(1);
+							option_flag = true;
+							// option_index = ;
+						}
+						if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
+							Z.append(1);
+							option_flag = false;
+							// option_index = ;
+						}
+
+					}
+
+				}
+			}
 
 		}
 	}
