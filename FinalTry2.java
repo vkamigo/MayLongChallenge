@@ -26,8 +26,8 @@ public class FinalTry2 {
 			String temp_number_X = Long.toBinaryString(number_X);
 			String temp_number_Y = Long.toBinaryString(number_Y);
 
-			StringBuilder X = new StringBuilder(); // X ko R k equal banaya .
-			StringBuilder Y = new StringBuilder(); // Y ko R k equal banaya .
+			StringBuilder x = new StringBuilder(); // X ko R k equal banaya .
+			StringBuilder y = new StringBuilder(); // Y ko R k equal banaya .
 			StringBuilder L = new StringBuilder(); // L ko R length equal banaya .
 			StringBuilder R = new StringBuilder(temp_number_R);
 
@@ -36,19 +36,23 @@ public class FinalTry2 {
 			}
 
 			for (long u = 0; u < (temp_number_R.length() - temp_number_X.length()); u++) {
-				X.append(0);
+				x.append(0);
 			}
 			for (long w = 0; w < (temp_number_R.length() - temp_number_Y.length()); w++) {
-				Y.append(0);
+				y.append(0);
 			}
 
 			L.append(temp_number_L);
-			X.append(temp_number_X);
-			Y.append(temp_number_Y);
+			x.append(temp_number_X);
+			y.append(temp_number_Y);
+
+			String X = new String(x.substring(x.length() - R.length()));
+			String Y = new String(y.substring(y.length() - R.length()));
+
+			System.out.println(L);
 
 			System.out.println(X);
 			System.out.println(Y);
-			System.out.println(L);
 			System.out.println(R);
 
 			boolean option_flag = false;
@@ -67,6 +71,7 @@ public class FinalTry2 {
 						if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
 							Z.append(1);
 							option_flag = false;
+							Z.replace(index - 1, index - 1, "0");
 							// option_index = ;
 						}
 					}
@@ -80,6 +85,7 @@ public class FinalTry2 {
 						if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
 							Z.append(1);
 							option_flag = false;
+							Z.replace(index - 1, index - 1, "0");
 							// option_index = ;
 						}
 					}
@@ -91,18 +97,18 @@ public class FinalTry2 {
 							option_flag = true;
 							// option_index = ;
 						}
-						if (X.charAt(index) == '0' && Y.charAt(index) == '1') {
+						else if (X.charAt(index) == '0' && Y.charAt(index) == '1') {
 							Z.append(1);
 							option_flag = true;
 							// option_index = ;
 						}
-						if (X.charAt(index) == '1' && Y.charAt(index) == '0') {
+						else if (X.charAt(index) == '1' && Y.charAt(index) == '0') {
 							Z.append(1);
 							option_flag = true;
 							// option_index = ;
 
 						}
-						if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
+						else if(X.charAt(index) == '1' && Y.charAt(index) == '1') {
 							Z.append(1);
 							option_flag = false;
 							// option_index = ;
@@ -116,17 +122,17 @@ public class FinalTry2 {
 							// option_index = ;
 
 						}
-						if (X.charAt(index) == '0' && Y.charAt(index) == '1') {
+						else if (X.charAt(index) == '0' && Y.charAt(index) == '1') {
 							Z.append(1);
 							option_flag = true;
 							// option_index = ;
 						}
-						if (X.charAt(index) == '1' && Y.charAt(index) == '0') {
+						else if (X.charAt(index) == '1' && Y.charAt(index) == '0') {
 							Z.append(1);
 							option_flag = true;
 							// option_index = ;
 						}
-						if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
+						else if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
 							Z.append(1);
 							option_flag = false;
 							// option_index = ;
@@ -141,17 +147,17 @@ public class FinalTry2 {
 							option_flag = true;
 							// option_index = ;
 						}
-						if (X.charAt(index) == '0' && Y.charAt(index) == '1') {
+						else if (X.charAt(index) == '0' && Y.charAt(index) == '1') {
 							Z.append(1);
 							option_flag = true;
 							// option_index = ;
 						}
-						if (X.charAt(index) == '1' && Y.charAt(index) == '0') {
+						else if (X.charAt(index) == '1' && Y.charAt(index) == '0') {
 							Z.append(1);
 							option_flag = true;
 							// option_index = ;
 						}
-						if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
+						else if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
 							Z.append(1);
 							option_flag = false;
 							// option_index = ;
@@ -163,17 +169,17 @@ public class FinalTry2 {
 							option_flag = true;
 							// option_index = ;
 						}
-						if (X.charAt(index) == '0' && Y.charAt(index) == '1') {
+						else if (X.charAt(index) == '0' && Y.charAt(index) == '1') {
 							Z.append(1);
 							option_flag = true;
 							// option_index = ;
 						}
-						if (X.charAt(index) == '1' && Y.charAt(index) == '0') {
+						else if (X.charAt(index) == '1' && Y.charAt(index) == '0') {
 							Z.append(1);
 							option_flag = true;
 							// option_index = ;
 						}
-						if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
+						else if (X.charAt(index) == '1' && Y.charAt(index) == '1') {
 							Z.append(1);
 							option_flag = false;
 							// option_index = ;
@@ -184,6 +190,12 @@ public class FinalTry2 {
 				}
 			}
 
+//			Z.substring(0, R.length());
+			
+			long final_result = Long.parseLong(Z.substring(0, R.length()), 2);
+
+			System.out.println(final_result);
+			//System.out.println(Z);
 		}
 	}
 }
